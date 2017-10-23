@@ -1,0 +1,12 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/bdwsgrv
+        username: postgres
+        password: 2A4d0m3i1n1_
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+server:
+    port: 8455
+        

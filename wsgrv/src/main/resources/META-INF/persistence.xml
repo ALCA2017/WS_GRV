@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.ws.grv_wsgrv_jar_0.0.1-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.ws.grv.modelo.entidades.Roles</class>
+    <class>com.ws.grv.modelo.entidades.Estados</class>
+    <class>com.ws.grv.modelo.entidades.UsuariosDetalle</class>
+    <class>com.ws.grv.modelo.entidades.Usuarios</class>
+    <class>com.ws.grv.modelo.entidades.User</class>
+    <class>com.ws.grv.modelo.entidades.TbUsuarios</class>
+    <class>com.ws.grv.modelo.entidades.NivGraMatriculados</class>
+    <class>com.ws.grv.modelo.entidades.Grado</class>
+    <class>com.ws.grv.modelo.entidades.Nivel</class>
+    <class>com.ws.grv.modelo.entidades.NivGra</class>
+    <class>com.ws.grv.modelo.entidades.NivgraDetalles</class>
+    <class>com.ws.grv.modelo.entidades.AreasAcademicas</class>
+    <class>com.ws.grv.modelo.entidades.CursosAcademicos</class>
+    <class>com.ws.grv.modelo.entidades.Seccion</class>
+    <class>com.ws.grv.modelo.entidades.NivGraDetalles</class>
+    <class>com.ws.grv.modelo.entidades.AnioAcademico</class>
+    <class>com.ws.grv.modelo.entidades.UnidadDidactica</class>
+    <class>com.ws.grv.modelo.entidades.ActividadesSesion</class>
+    <class>com.ws.grv.modelo.entidades.DetalleSesion</class>
+    <class>com.ws.grv.modelo.entidades.SesionUnidadDidactica</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/bdwsgrv"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="2A4d0m3i1n1_"/>
+    </properties>
+  </persistence-unit>
+</persistence>
