@@ -23,10 +23,10 @@
     <class>com.ws.grv.modelo.entidades.DetalleSesion</class>
     <class>com.ws.grv.modelo.entidades.SesionUnidadDidactica</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/bdwsgrv"/>
-      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://grvdbinstance.cql8xnmimrct.us-west-1.rds.amazonaws.com:5432/grv"/>
+      <property name="javax.persistence.jdbc.user" value="usernamegrv"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="2A4d0m3i1n1_"/>
+      <property name="javax.persistence.jdbc.password" value="passwordgrv"/>
     </properties>
   </persistence-unit>
 </persistence>
