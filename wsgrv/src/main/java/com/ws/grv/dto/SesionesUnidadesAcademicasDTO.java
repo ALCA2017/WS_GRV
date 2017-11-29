@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ws.grv.dto.malla;
+package com.ws.grv.dto;
 
 import java.util.List;
 import lombok.Getter;

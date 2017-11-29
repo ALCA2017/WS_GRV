@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.ws.grv.modelo.entidades;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
@@ -188,7 +182,7 @@ public class SesionUnidadDidactica implements Serializable {
 
     @Override
     public String toString() {
-        return "com.ws.grv.modelo.entidades.SesionUnidadDidactica[ idSesion=" + idSesion + " ]";
+        return idSesion.toString();
     }
     
 }

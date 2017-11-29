@@ -5,7 +5,7 @@
  */
 package com.ws.grv.modelo.service.impl;
 
-import com.ws.grv.dto.usuarios.UsuariosCompletoDTO;
+import com.ws.grv.dto.UsuariosCompletoDTO;
 import com.ws.grv.modelo.entidades.Usuarios;
 import com.ws.grv.modelo.repository.AreasAcademicasRepository;
 import com.ws.grv.modelo.repository.CursosAcademicosRepository;

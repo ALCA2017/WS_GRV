@@ -7,10 +7,11 @@ package com.ws.grv.modelo.service.impl;
 
 import com.ws.grv.dto.ExceptionWsgrv;
 import com.ws.grv.dto.Mensaje;
-import com.ws.grv.dto.malla.AnioAcademicoDTO;
-import com.ws.grv.dto.malla.AreasAcademicasDTO;
-import com.ws.grv.dto.malla.SesionesUnidadesAcademicasDTO;
-import com.ws.grv.dto.malla.UnidadesDidacticasDTO;
+import com.ws.grv.dto.AnioAcademicoDTO;
+import com.ws.grv.dto.AreasAcademicasDTO;
+import com.ws.grv.dto.SesionesUnidadesAcademicasDTO;
+import com.ws.grv.dto.TemasUnidadDidacticaDTO;
+import com.ws.grv.dto.UnidadesDidacticasDTO;
 import com.ws.grv.modelo.entidades.AnioAcademico;
 import com.ws.grv.modelo.entidades.DetalleSesion;
 import com.ws.grv.modelo.entidades.SesionUnidadDidactica;
@@ -106,7 +107,7 @@ public class MallaCurricularServiceImpl implements MallaCurricularService {
         }
     }
 
-    @Override
+   /* @Override
     public List<SesionesUnidadesAcademicasDTO> listar_sesiones_de_las_unidades_academicas_x_unidad_didactica(int idUnidadAcademica) throws Exception {
         try {
             if(idUnidadAcademica == 0){
@@ -151,7 +152,7 @@ public class MallaCurricularServiceImpl implements MallaCurricularService {
             LOGGER.error(e.getMessage());
             throw e;
         }
-    }
+    }*/
 
     @Override
     public List<AnioAcademicoDTO> listar_anio_academico() throws Exception {
@@ -178,6 +179,11 @@ public class MallaCurricularServiceImpl implements MallaCurricularService {
             LOGGER.error(e.getMessage());
             throw e;
         }
+    }
+
+    @Override
+    public List<TemasUnidadDidacticaDTO> getTemas_Recursos_UD(int idUnidadDidactica) {
+        return sesionUnidadDidacticaRepository.getTemas_Recursos_UD(idUnidadDidactica);
     }
     
 }

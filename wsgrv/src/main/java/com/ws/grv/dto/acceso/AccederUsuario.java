@@ -7,11 +7,11 @@ import lombok.Setter;
 @Setter
 public class AccederUsuario {
 
-    private String usuario;
+    private String email;
     private String contrasenia;
 
-    public AccederUsuario(String usuario, String contrasenia) {
-        this.usuario = usuario;
+    public AccederUsuario(String email, String contrasenia) {
+        this.email = email;
         this.contrasenia = contrasenia;
     }
 

@@ -1,21 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.ws.grv.web.controller;
 
-import com.ws.grv.dto.malla.AnioAcademicoDTO;
-import com.ws.grv.dto.malla.AreasAcademicasDTO;
-import com.ws.grv.dto.malla.SesionesUnidadesAcademicasDTO;
-import com.ws.grv.dto.malla.UnidadesDidacticasDTO;
-import com.ws.grv.dto.usuarios.Usuarios_AlumnosCursosDTO;
-import com.ws.grv.modelo.service.AlumnosCursosService;
+import com.ws.grv.dto.AnioAcademicoDTO;
+import com.ws.grv.dto.AreasAcademicasDTO;
+import com.ws.grv.dto.SesionesUnidadesAcademicasDTO;
+import com.ws.grv.dto.TemasUnidadDidacticaDTO;
+import com.ws.grv.dto.UnidadesDidacticasDTO;
 import com.ws.grv.modelo.service.MallaCurricularService;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,25 +27,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/malla")
 public class MallaCurricularController {
     
-    private static final Logger LOGGER = LoggerFactory.getLogger(AccesoController.class);
-    
-    @Autowired
-    private AlumnosCursosService alumnosCursosService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(UsuariosController.class);
     
     @Autowired
     private MallaCurricularService mallaCurricularService;
-    
-    @RequestMapping(value = "/cursos/academicos", method = RequestMethod.GET)
-    public ResponseEntity lista_cursos_academicos(@RequestParam("idUsuario") int idUsuario, @RequestParam("idArea") int idArea) {
-        try {
-            Usuarios_AlumnosCursosDTO r = this.alumnosCursosService.Cursos_Area_Matriculados(idUsuario, idArea);
-            return new ResponseEntity(r, HttpStatus.OK);
-        } catch (Exception e) {
-            LOGGER.error(e.getMessage(), e);
-            return new ResponseEntity(HttpStatus.OK);
-        }
-    }
-    
+
     @RequestMapping(value = "/areas/academicas", method = RequestMethod.GET)
     public ResponseEntity lista_areas_academicas(@RequestParam("anioAcademico") int anioAcademico) {
         try {
@@ -58,7 +39,7 @@ public class MallaCurricularController {
             return new ResponseEntity(r, HttpStatus.OK);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
-            return new ResponseEntity(HttpStatus.OK);
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
     }
     
@@ -69,10 +50,10 @@ public class MallaCurricularController {
             return new ResponseEntity(r, HttpStatus.OK);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
-            return new ResponseEntity(HttpStatus.OK);
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
     }
-    
+    /*
     @RequestMapping(value = "/areas/unidades/sesiones", method = RequestMethod.GET)
     public ResponseEntity lista_areas_unidades_sesiones(@RequestParam("idUnidadAcademica") int idUnidadAcademica) {
         try {
@@ -82,7 +63,7 @@ public class MallaCurricularController {
             LOGGER.error(e.getMessage(), e);
             return new ResponseEntity(HttpStatus.OK);
         }
-    }
+    }*/
     
     @RequestMapping(value = "/anios/academicos", method = RequestMethod.GET)
     public ResponseEntity lista_anios_academicos() {
@@ -93,5 +74,20 @@ public class MallaCurricularController {
             LOGGER.error(e.getMessage(), e);
             return new ResponseEntity(HttpStatus.OK);
         }
+    }
+    
+    @RequestMapping(value = "/unidadesAcademicas/temas_recursos", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<List<TemasUnidadDidacticaDTO>> getAllTemasConRecursos(@RequestParam int idUnidadDidactica)
+    {
+    	System.out.println("Log WS temas_recursos :: ");
+    	
+    	HttpHeaders headers = new HttpHeaders();
+    	List<TemasUnidadDidacticaDTO>  temas = mallaCurricularService.getTemas_Recursos_UD(idUnidadDidactica);
+        
+        if (temas == null) {
+            return new ResponseEntity<List<TemasUnidadDidacticaDTO>>(HttpStatus.NOT_FOUND);
+        } 
+        
+        return new ResponseEntity<List<TemasUnidadDidacticaDTO>>(temas, headers, HttpStatus.OK);// temasList;
     }
 }

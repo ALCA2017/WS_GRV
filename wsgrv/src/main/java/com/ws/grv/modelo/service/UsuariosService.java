@@ -5,7 +5,7 @@
  */
 package com.ws.grv.modelo.service;
 
-import com.ws.grv.dto.usuarios.UsuariosCompletoDTO;
+import com.ws.grv.dto.UsuariosCompletoDTO;
 import com.ws.grv.modelo.entidades.Usuarios;
 import java.util.List;
 

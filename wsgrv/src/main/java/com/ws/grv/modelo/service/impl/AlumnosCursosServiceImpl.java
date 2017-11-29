@@ -7,7 +7,7 @@ package com.ws.grv.modelo.service.impl;
 
 import com.ws.grv.dto.ExceptionWsgrv;
 import com.ws.grv.dto.Mensaje;
-import com.ws.grv.dto.usuarios.Usuarios_AlumnosCursosDTO;
+import com.ws.grv.dto.Usuarios_AlumnosCursosDTO;
 import com.ws.grv.modelo.entidades.AreasAcademicas;
 import com.ws.grv.modelo.entidades.CursosAcademicos;
 import com.ws.grv.modelo.entidades.NivGra;

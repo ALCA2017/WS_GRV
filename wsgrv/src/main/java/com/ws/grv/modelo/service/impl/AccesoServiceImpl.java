@@ -29,10 +29,13 @@ public class AccesoServiceImpl implements AccesoService {
     
     @Override
     public Respuesta authenticate(AccederUsuario accederUsuario) throws Exception {
+        
         try {
-            String usuario = accederUsuario.getUsuario();
-            String contrasenia = accederUsuario.getContrasenia();
+            
+            String usuario                = accederUsuario.getEmail();
+            String contrasenia            = accederUsuario.getContrasenia();
             String contrasenia_encriptada = Encriptador.encriptarTexto(contrasenia);
+            
             // VALIDACIONES <-----------------------------------
             if ("".equals(usuario)){
                 return new Respuesta(new Mensaje(AuxRepositorio.VALIDACION__NO_HA_INDICADO_UN_CORREO, "Debe indicar un usuario.", AuxRepositorio.TIPO_MENSAJE__CONFIRMACION));

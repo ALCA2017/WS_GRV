@@ -29,22 +29,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "*", methods = {GET, POST, PUT})
 @RequestMapping("/api")
-public class AccesoController {
+public class UsuariosController {
     
-    private static final Logger LOGGER = LoggerFactory.getLogger(AccesoController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(UsuariosController.class);
     
     @Autowired
     private AccesoService accesoService;
-    
-    @RequestMapping(value = "/user/authenticate", method = RequestMethod.POST)
+   
+    @RequestMapping(value = "/usuario/autenticacion", method = RequestMethod.POST)
     public ResponseEntity acceder_usuario(@RequestBody AccederUsuario accederUsuario) {
+        
+        System.out.println("::::::::::::::::::::::::::::::::::");
+        System.out.println("Entrando al servicios "+accederUsuario.getEmail());
         try {
             Respuesta r = this.accesoService.authenticate(accederUsuario);
             return new ResponseEntity(r, HttpStatus.OK);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
-            return new ResponseEntity(HttpStatus.OK);
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
     }
     
+    
+    //http://www.baeldung.com/spring-mvc-image-media-data
 }

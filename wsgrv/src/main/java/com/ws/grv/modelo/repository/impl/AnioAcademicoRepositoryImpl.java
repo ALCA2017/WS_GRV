@@ -6,9 +6,6 @@
 package com.ws.grv.modelo.repository.impl;
 
 import com.ws.grv.modelo.entidades.AnioAcademico;
-import com.ws.grv.modelo.entidades.AnioAcademico_;
-import com.ws.grv.modelo.entidades.DetalleSesion;
-import com.ws.grv.modelo.entidades.DetalleSesion_;
 import com.ws.grv.modelo.repository.AnioAcademicoRepository;
 import com.ws.grv.modelo.repository.UsuarioRepository;
 import java.util.List;

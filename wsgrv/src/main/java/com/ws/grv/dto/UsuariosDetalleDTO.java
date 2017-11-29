@@ -1,4 +1,4 @@
-package com.ws.grv.dto.usuarios;
+package com.ws.grv.dto;
 
 import java.io.Serializable;
 import lombok.Getter;
