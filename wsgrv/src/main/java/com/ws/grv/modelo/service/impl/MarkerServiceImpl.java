@@ -52,6 +52,9 @@ public class MarkerServiceImpl implements MarkerService{
         repository.insertMarker(marker);
     }
 
- 
+    @Override
+    public void addMarker(Marker marker, String ruta) {
+        repository.insertMarker(marker, ruta);
+    } 
     
 }

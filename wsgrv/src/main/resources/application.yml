@@ -1,23 +1,23 @@
 spring:
     datasource:       
-        url: jdbc:postgresql://ec2-54-163-246-154.compute-1.amazonaws.com:5432/dm3u13n6020u?sslmode=require&amp;user=nojybphybxzwgg&amp;password=6f3a6b634fd2a5a4899a739c5990944f308f55921298e8bf5d9bff99b4170f2e
-        username: nojybphybxzwgg
-        password: 6f3a6b634fd2a5a4899a739c5990944f308f55921298e8bf5d9bff99b4170f2e
+        #url: jdbc:postgresql://ec2-54-163-246-154.compute-1.amazonaws.com:5432/dm3u13n6020u?sslmode=require&amp;user=nojybphybxzwgg&amp;password=6f3a6b634fd2a5a4899a739c5990944f308f55921298e8bf5d9bff99b4170f2e
+        #username: nojybphybxzwgg
+        #password: 6f3a6b634fd2a5a4899a739c5990944f308f55921298e8bf5d9bff99b4170f2e
 
         #url: jdbc:postgresql://baasu.db.elephantsql.com:5432/aplfygyg?sslmode=require&amp;user=aplfygyg&amp;password=NvRAcXoDYRltiYbrzYyLbxFz6aw9eLFP
         #username: aplfygyg
         #password: NvRAcXoDYRltiYbrzYyLbxFz6aw9eLFP
+                
+        url: jdbc:postgresql://localhost:5432/postgres
+        username: postgres
+        password: postgres       
 
-        
-        #url: jdbc:postgresql://localhost:5432/postgres
-        #username: postgres
-        #password: postgres        
-        
         driver-class-name: org.postgresql.Driver
     jpa:
         database-platform: org.hibernate.dialect.PostgreSQLDialect
         show-sql: true
 server:
     port: 8455
-    connectionTimeout: 60000
+ # connectionTimeout: 60000
+
         

@@ -70,7 +70,14 @@ public class Marker implements Serializable {
             this.nombre 	= nombre;
             this.imgPatternmat 	= img_patternMat;
             this.descripcion 	= descripcion;
+    }
+    
+    public Marker(SesionUnidadDidactica id_sesion, String nombre, String descripcion) {
+            this.idSesion 	= id_sesion;
+            this.nombre 	= nombre;
+            this.descripcion 	= descripcion;
     }	    
+    
     public Marker(Integer idMarker) {
         this.idMarker = idMarker;
     }

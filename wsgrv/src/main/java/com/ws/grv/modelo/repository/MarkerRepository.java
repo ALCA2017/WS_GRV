@@ -9,4 +9,6 @@ public interface MarkerRepository {
 
     public void insertMarker(Marker marker);	    
     
+    public void insertMarker(Marker marker, String ruta);	    
+    
 }

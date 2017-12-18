@@ -28,21 +28,21 @@
     <class>com.ws.grv.modelo.entidades.RecursoWww</class>
     <class>com.ws.grv.IndicadoresSesion</class>
     <properties>
-        <!--
+
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="postgres"/>-->
+      <property name="javax.persistence.jdbc.password" value="postgres"/>
       <!--
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://grvdbinstance.cql8xnmimrct.us-west-1.rds.amazonaws.com:5432/grv"/>
       <property name="javax.persistence.jdbc.user" value="usernamegrv"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.password" value="passwordgrv"/>-->
-      
+      <!--
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-54-163-246-154.compute-1.amazonaws.com:5432/dm3u13n6020u?sslmode=require&amp;user=nojybphybxzwgg&amp;password=6f3a6b634fd2a5a4899a739c5990944f308f55921298e8bf5d9bff99b4170f2e"/>
       <property name="javax.persistence.jdbc.user" value="nojybphybxzwgg"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="6f3a6b634fd2a5a4899a739c5990944f308f55921298e8bf5d9bff99b4170f2e"/>
+      <property name="javax.persistence.jdbc.password" value="6f3a6b634fd2a5a4899a739c5990944f308f55921298e8bf5d9bff99b4170f2e"/>-->
     
  <!--     
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://baasu.db.elephantsql.com:5432/aplfygyg?sslmode=require&amp;user=aplfygyg&amp;password=NvRAcXoDYRltiYbrzYyLbxFz6aw9eLFP"/>

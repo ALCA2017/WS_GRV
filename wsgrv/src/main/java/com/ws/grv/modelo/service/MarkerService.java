@@ -10,4 +10,6 @@ public interface MarkerService {
 
     public void addMarker(Marker marker);	    
     
+    public void addMarker(Marker marker, String ruta);	    
+    
 }

@@ -4,6 +4,10 @@ import com.ws.grv.modelo.entidades.Marker;
 import com.ws.grv.modelo.entidades.Marker_;
 import com.ws.grv.modelo.repository.MarkerRepository;
 import com.ws.grv.util.Utilitarios;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -71,6 +75,30 @@ public class MarkerRepositoryImpl implements MarkerRepository{
         }          
     }
     
-   
+    @Override
+    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)    
+    public void insertMarker(Marker marker, String ruta) {
+        
+        String sql = "INSERT INTO bd_wsgrv.marker(id_sesion, nombre, img_patternmat, descripcion, estado, fecha_creado, fecha_actualizado) "
+                   + " VALUES (?, ?, ?, ?, ?, ?, ?) " ;
+        try { 
+            //File file = new File(getCacheDirectory() + "\\results.txt");
+            File file = new File("D:\\ruta\\nombreTema.jpg");
+               
+            Query query = entityManager.createNativeQuery(sql);
+            query.setParameter(1, marker.getIdSesion());
+            query.setParameter(2, marker.getNombre());
+            query.setParameter(3, Utilitarios.ImageToByte(file));
+            query.setParameter(4, marker.getDescripcion());
+            query.setParameter(5, 1);
+            query.setParameter(6, util.getFechaActual());
+            query.setParameter(7, util.getFechaActual());
+            query.executeUpdate();
+            
+        } catch (IOException e) {
+            LOGGER.error(e.getMessage());
+            //throw e;            
+        }          
+    }   
     
 }

@@ -37,12 +37,24 @@ public class MarkerController {
       return videoList;  
      } 
 
+    //http://localhost:8455/pattern/marker/create?id_sesion=id_sesion&nombre=nombre&img_patternMat=img_patternMat&descripcion=descripcion
+     @RequestMapping(value = "/marker/create2", method = RequestMethod.GET)
+     public @ResponseBody void createMarker2(@RequestParam(value = "id_sesion", required = true) int id_sesion,
+                                            @RequestParam(value = "nombre", required = true) String nombre,
+                                            @RequestParam(value = "ruta", required = true) String ruta,                                            
+                                            @RequestParam(value = "descripcion", required = true) String descripcion) {
 
+             SesionUnidadDidactica sesion = new SesionUnidadDidactica();
+             sesion.setIdSesion(id_sesion);                            
+             Marker marker = new Marker(sesion, nombre, descripcion);
+             manager.addMarker(marker, ruta);
+     }
+     
     //http://localhost:8455/pattern/marker/create?id_sesion=id_sesion&nombre=nombre&img_patternMat=img_patternMat&descripcion=descripcion
      @RequestMapping(value = "/marker/create", method = RequestMethod.GET)
      public @ResponseBody void createMarker(@RequestParam(value = "id_sesion", required = true) int id_sesion,
                                             @RequestParam(value = "nombre", required = true) String nombre,
-                                            @RequestParam(value = "img_patternMat", required = true) byte[] img_patternMat,
+                                            @RequestParam(value = "img_patternMat", required = true) byte[] img_patternMat,                                          
                                             @RequestParam(value = "descripcion", required = true) String descripcion) {
 
              SesionUnidadDidactica sesion = new SesionUnidadDidactica();
@@ -50,6 +62,5 @@ public class MarkerController {
              Marker marker = new Marker(sesion, nombre, img_patternMat, descripcion);
              manager.addMarker(marker);
      }
-	      
-    
+   
 }
